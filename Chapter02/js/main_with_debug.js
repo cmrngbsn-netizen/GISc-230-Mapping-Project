@@ -1,5 +1,11 @@
 // JavaScript by Cameron Gibson, 2026
 
+// Debugging Notes:
+// Fixed issues with table generation and event handling.
+// Corrected loop references and verified DOM loading behavior.
+// Confirmed hover and click interactions function properly.
+// Used browser console and testing to identify and resolve errors.
+
 // This function runs when the page has finished loading.
 function initialize() {
     cities();
@@ -62,8 +68,12 @@ function addEvents() {
         });
 
         rows[i].addEventListener("click", function() {
-            alert("You clicked a city row.");
-        });
+
+    var cityName = this.cells[0].innerHTML;
+
+    alert("You clicked on " + cityName);
+
+});
     }
 }
 
